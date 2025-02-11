@@ -1,119 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DTKING</title>
-    <style>
-        /* Animated Colorful Background */
-        @keyframes gradientMove {
-            0% { background-position: 50% 0%; }
-            50% { background-position: 50% 100%; }
-            100% { background-position: 50% 0%; }
-        }
+  <meta charset="UTF-8">
+  <title>DTKING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Background Animation */
+    @keyframes gradientMove {
+      0% { filter: hue-rotate(0deg); }
+      50% { filter: hue-rotate(180deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            color: white;
-            background: linear-gradient(180deg, #ff00ff, #ff6600, #00ccff, #ffcc00);
-            background-size: 400% 400%;
-            animation: gradientMove 10s infinite ease-in-out;
-            overflow: hidden;
-        }
+    /* Body Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      background: url('https://i.postimg.cc/pd7kt2PG/Picsart-25-02-11-10-35-20-448.png') no-repeat center center fixed;
+      background-size: cover;
+      animation: gradientMove 8s infinite linear;
+      overflow: hidden;
+    }
 
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 450px;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+    /* Centered Container */
+    .container {
+      background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+      padding: 20px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-        h1 {
-            font-size: 48px;
-            margin: 0;
-            font-weight: bold;
-            text-shadow: 2px 2px 10px black;
-        }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+    }
 
-        p {
-            font-size: 20px;
-            margin: 10px 0;
-            font-weight: bold;
-            opacity: 0.9;
-            text-shadow: 1px 1px 5px black;
-        }
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      opacity: 0.9;
+      text-shadow: 1px 1px 5px black;
+      margin-bottom: 15px;
+    }
 
-        /* Stylish Animated Buttons */
-        .button {
-            display: block;
-            width: 85%;
-            margin: 15px auto;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease-in-out;
-            border: none;
-            text-shadow: 1px 1px 3px black;
-            cursor: pointer;
-        }
+    /* Buttons Section */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
 
-        .telegram-btn {
-            background: linear-gradient(to right, #0088cc, #005f8c);
-            color: white;
-            box-shadow: 0px 4px 15px rgba(0, 136, 204, 0.5);
-        }
+    .buttons-text {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 5px black;
+      margin-bottom: 5px;
+    }
 
-        .telegram-btn:hover {
-            background: linear-gradient(to right, #005f8c, #003f6c);
-            transform: scale(1.05);
-        }
+    /* Button Styling */
+    .button-link {
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 0;
+      border-radius: 8px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .download-btn {
-            background: linear-gradient(to right, darkgoldenrod, goldenrod);
-            color: white;
-            box-shadow: 0px 4px 15px rgba(218, 165, 32, 0.5);
-        }
+    /* Telegram Button */
+    .telegram {
+      background-color: #0088cc;
+    }
 
-        .download-btn:hover {
-            background: linear-gradient(to right, goldenrod, orange);
-            transform: scale(1.05);
-        }
+    .telegram:hover {
+      background-color: #0077b6;
+    }
 
-        .hack-btn {
-            background: linear-gradient(to right, #ff0000, #cc0000);
-            color: white;
-            box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.5);
-        }
+    /* Download App Buttons */
+    .download-app {
+      background: linear-gradient(45deg, #ff4b5c, #ff6f61);
+    }
 
-        .hack-btn:hover {
-            background: linear-gradient(to right, #cc0000, #990000);
-            transform: scale(1.05);
-        }
+    .download-app:hover {
+      background: linear-gradient(45deg, #ff6f61, #ff4b5c);
+    }
 
-    </style>
+    /* Hack Download Button */
+    .download-hack {
+      background: linear-gradient(45deg, #ffa726, #ff9800);
+    }
+
+    .download-hack:hover {
+      background: linear-gradient(45deg, #ff9800, #ffa726);
+    }
+
+    /* Hover Effect */
+    .button-link:hover {
+      transform: scale(1.05);
+    }
+    
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DTKING</h1>
-        <p>Join our Telegram channel</p>
-        <a href="https://t.me/+5_7zpF4aauI2MzRl" class="button telegram-btn">Join Telegram</a>
-        <a href="https://rummyapple.com/?from_gameid=12737056&channelCode=12698101" class="button download-btn">Download App 1</a>
-        <a href="https://rummymost.vip/?from_gameid=7017585&channelCode=100000" class="button download-btn">Download App 2</a>
-        <a href="https://apk.e-droid.net/apk/app3449651-mlnxdw.apk?v=1" class="button hack-btn">Download Hack</a>
+  <div class="container">
+    <h1>DTKING</h1>
+    <p>Join our Telegram channel</p>
+    
+    <div class="buttons">
+      <div class="buttons-text">Hack working apk link 🔗 👇</div>
+      <a href="https://t.me/+5_7zpF4aauI2MzRl" class="button-link telegram">Join Channel</a>
+
+      <div class="buttons-text">Download app link 🔗 👇</div>
+      <a href="https://rummyapple.com/?from_gameid=12737056&channelCode=12698101" class="button-link download-app">Download Now</a>
+
+      <div class="buttons-text">Download app link 🔗 👇</div>
+      <a href="https://rummymost.vip/?from_gameid=7017585&channelCode=100000" class="button-link download-app">Download Now</a>
+
+      <div class="buttons-text">Download hack link 🔗 👇</div>
+      <a href="https://apk.e-droid.net/apk/app3449651-mlnxdw.apk?v=1" class="button-link download-hack">Download Hack</a>
     </div>
+  </div>
 </body>
 </html>
